@@ -105,3 +105,4 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
   .split.reverse img { order: 2; }
   .nav nav a:not(.button) { display: none; }
 }
+.button.disabled { opacity: 0.6; cursor: default; filter: none; }
