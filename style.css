@@ -1,0 +1,107 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f5f5f2;
+  --panel: #ffffff;
+  --border: #e2e3df;
+  --text: #1e2a32;
+  --muted: #66727a;
+  --accent: #0f6e6e;
+  --accent-fg: #ffffff;
+  --amber: #f2a541;
+  --focus: #6d28d9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1418;
+    --panel: #111c22;
+    --border: #1f2d35;
+    --text: #e8eef0;
+    --muted: #8a9aa3;
+    --accent: #19a3a3;
+    --accent-fg: #0b1418;
+    --focus: #c4b5fd;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 17px;
+}
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; gap: 10px; align-items: center; font-weight: 700; color: var(--text); text-decoration: none; font-size: 18px; }
+.brand img { border-radius: 7px; }
+.nav nav { display: flex; gap: 22px; align-items: center; }
+.nav nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.nav nav a:hover { color: var(--text); }
+
+.button {
+  display: inline-block;
+  background: var(--accent); color: var(--accent-fg);
+  font-weight: 600; text-decoration: none;
+  padding: 13px 22px; border-radius: 10px;
+}
+.button:hover { filter: brightness(1.08); }
+.nav .button.small { color: var(--accent-fg); padding: 7px 14px; font-size: 14px; }
+
+main { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+.hero { text-align: center; padding: 72px 0 40px; }
+.hero-icon { border-radius: 26px; box-shadow: 0 18px 40px rgba(15, 110, 110, 0.25); }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 26px auto 18px; letter-spacing: -0.02em; max-width: 880px; }
+.lede { max-width: 680px; margin: 0 auto; color: var(--muted); font-size: 19px; }
+.cta { margin: 30px 0 44px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.shot img, .split img {
+  width: 100%; height: auto; display: block;
+  border-radius: 14px; border: 1px solid var(--border);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
+}
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; padding: 64px 0 24px; }
+.features article { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+.features h2 { font-size: 18px; margin: 0 0 8px; }
+.features p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+.split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 44px; align-items: center; padding: 56px 0; }
+.split.reverse { grid-template-columns: 1.5fr 1fr; }
+.split h2 { font-size: 28px; margin: 0 0 10px; letter-spacing: -0.01em; }
+.split p { color: var(--muted); margin: 0; }
+.split:not(.reverse) h2 { color: var(--focus); }
+
+.pricing { text-align: center; padding: 64px 0 24px; }
+.pricing h2, .install h2 { font-size: 30px; margin: 0 0 26px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 320px)); gap: 22px; justify-content: center; }
+.plan { position: relative; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 26px; text-align: left; }
+.plan.pro { border-color: var(--accent); }
+.plan h3 { margin: 0; font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.price { font-size: 40px; font-weight: 700; margin: 8px 0 0; }
+.price span { font-size: 16px; font-weight: 400; color: var(--muted); }
+.alt { margin: 0; color: var(--muted); font-size: 14px; }
+.plan ul { padding-left: 18px; margin: 16px 0 0; color: var(--muted); font-size: 15.5px; }
+.soon { position: absolute; top: 18px; right: 18px; font-size: 12px; font-weight: 600; color: var(--amber); }
+
+.install { max-width: 640px; margin: 0 auto; padding: 56px 0 80px; }
+.install ol { padding-left: 22px; }
+.install li { margin: 6px 0; }
+
+footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex; justify-content: space-between; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 760px) {
+  .split, .split.reverse { grid-template-columns: 1fr; }
+  .split.reverse img { order: 2; }
+  .nav nav a:not(.button) { display: none; }
+}
