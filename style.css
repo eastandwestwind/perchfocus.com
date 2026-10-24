@@ -121,3 +121,8 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .privacy h3 { margin: 0 0 6px; font-size: 16px; }
 .privacy p { margin: 0; color: var(--muted); font-size: 15px; }
 .privacy code { font-size: 13px; }
+.privacy-icon { display: block; width: 56px; height: 56px; margin: 0 auto 12px; }
+.privacy-icon > path:first-child { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+.privacy-icon .lock { fill: var(--accent); }
+.privacy-icon .shackle { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
+.feature-icon { width: 28px; height: 28px; margin-bottom: 12px; padding: 7px; box-sizing: content-box; border-radius: 10px; background: color-mix(in srgb, var(--accent) 12%, transparent); fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
