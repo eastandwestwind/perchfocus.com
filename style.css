@@ -113,3 +113,11 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .migrate p { margin: 0; color: var(--muted); }
 @media (max-width: 760px) { .migrate { flex-direction: column; text-align: center; } }
 .brand .beta { font-size: 11px; font-weight: 600; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0 7px; letter-spacing: 0.04em; }
+
+.privacy { padding: 56px 0 8px; }
+.privacy h2 { font-size: 30px; margin: 0 0 22px; text-align: center; }
+.privacy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.privacy article { padding: 18px 20px; border-radius: 14px; border: 1px solid var(--border); background: var(--panel); }
+.privacy h3 { margin: 0 0 6px; font-size: 16px; }
+.privacy p { margin: 0; color: var(--muted); font-size: 15px; }
+.privacy code { font-size: 13px; }
