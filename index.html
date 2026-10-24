@@ -9,7 +9,7 @@
   <meta property="og:description" content="Do one thing. Perch watches the rest. A calm Mac home for your Claude Code work, with every session, PR, and link in one place." />
   <meta property="og:image" content="https://perchfocus.com/assets/dashboard-dark-v5.png" />
   <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <header class="nav">
@@ -31,6 +31,8 @@
         <span class="muted">Free beta · macOS · Apple Silicon</span>
       </div>
       <picture class="shot">
+        <source srcset="assets/dashboard-dark-mobile-v1.png" media="(max-width: 760px) and (prefers-color-scheme: dark)" />
+        <source srcset="assets/dashboard-light-mobile-v1.png" media="(max-width: 760px)" />
         <source srcset="assets/dashboard-dark-v5.png" media="(prefers-color-scheme: dark)" />
         <img src="assets/dashboard-light-v5.png" alt="The Perch dashboard: contexts grouped into Needs me and Idle, each with a status summary, PR state, and next steps" />
       </picture>
@@ -74,11 +76,17 @@
           Mute every other context and stay with one. Leave when you choose to.
         </p>
       </div>
-      <img src="assets/deepfocus-dark-v5.png" alt="Deep focus: a single context framed in violet with other contexts muted" />
+      <picture>
+        <source srcset="assets/deepfocus-dark-mobile-v1.png" media="(max-width: 760px)" />
+        <img src="assets/deepfocus-dark-v5.png" alt="Deep focus: a single context framed in violet with other contexts muted" />
+      </picture>
     </section>
 
     <section class="split reverse">
-      <img src="assets/focus-light-v5.png" alt="A context's focus view with the terminal, status summary, next steps, PR, and links" />
+      <picture>
+        <source srcset="assets/focus-light-mobile-v1.png" media="(max-width: 760px)" />
+        <img src="assets/focus-light-v5.png" alt="A context's focus view with the terminal, status summary, next steps, PR, and links" />
+      </picture>
       <div>
         <h2>One place per piece of work</h2>
         <p>The real Claude Code terminal, with its summary, checklist, PRs, links, and notes beside it.</p>
