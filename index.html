@@ -9,7 +9,7 @@
   <meta property="og:description" content="Do one thing. Perch watches the rest. A calm Mac home for your Claude Code work, with every session, PR, and link in one place." />
   <meta property="og:image" content="https://perchfocus.com/assets/dashboard-dark-v5.png" />
   <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
   <header class="nav">
@@ -84,10 +84,18 @@
     </section>
 
     <section class="split reverse">
-      <picture>
-        <source srcset="assets/chat-light-mobile-v1.png" media="(max-width: 760px)" />
-        <img src="assets/chat-light-v1.png" alt="A context in Chat view: a conversation with Claude about pricing-page headlines, with next steps, status, and links beside it" />
-      </picture>
+      <div class="overlap">
+        <picture class="back">
+          <source srcset="assets/view-terminal-dark-v1.png" media="(prefers-color-scheme: dark)" />
+          <img src="assets/view-terminal-light-v1.png" alt="Terminal view: the real Claude Code terminal showing a conversation about pricing-page headlines" />
+        </picture>
+        <picture class="front">
+          <source srcset="assets/chat-dark-mobile-v2.png" media="(max-width: 760px) and (prefers-color-scheme: dark)" />
+          <source srcset="assets/chat-light-mobile-v2.png" media="(max-width: 760px)" />
+          <source srcset="assets/view-chat-dark-v1.png" media="(prefers-color-scheme: dark)" />
+          <img src="assets/view-chat-light-v1.png" alt="Chat view: the same conversation as chat bubbles with formatted replies and a message box" />
+        </picture>
+      </div>
       <div>
         <h2>One place per piece of work</h2>
         <p>Chat with Claude, or switch to the real Claude Code terminal. Its status, next steps, PRs, links, and notes sit beside it.</p>
