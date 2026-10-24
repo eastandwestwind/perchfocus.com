@@ -127,3 +127,4 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .privacy-icon .lock { fill: var(--accent); }
 .privacy-icon .shackle { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
 .feature-icon { width: 28px; height: 28px; margin-bottom: 12px; padding: 7px; box-sizing: content-box; border-radius: 10px; background: color-mix(in srgb, var(--accent) 12%, transparent); fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.updates-link { font-size: 14px; }
