@@ -12,6 +12,9 @@ Tagline: Do one thing. Perch watches the rest.
 - Chat view shows the conversation with formatted replies and a message box. Terminal view is the real Claude Code CLI.
 - Every next step has an owner (you, Claude, or a teammate), and Claude keeps a one-line status as it works.
 - PRs are detected automatically across repos and worktrees, with review state, CI checks, and who you are waiting on (via the GitHub CLI).
+- Jira tickets show their status, assignee, and new comments, with a list of tickets assigned to you (via Atlassian's own CLI sign-in; read-only).
+- Links from Slack, Confluence, Google Docs, and other tools can be pinned to a context with readable titles.
+- Feedback, with an optional screenshot of the Perch window, can be sent from inside the app.
 - Deep focus mutes every other context so you can stay with one.
 - Sessions keep running when you quit or update Perch.
 - Existing Claude Code sessions can be imported and resumed where they left off.
@@ -26,6 +29,7 @@ Engineers who juggle parallel Claude Code work, and non-engineers (product manag
 - macOS on Apple Silicon
 - Claude Code (Perch can install it for you)
 - GitHub CLI, optional, for PR states
+- Atlassian CLI, optional, for Jira
 
 ## Privacy
 

@@ -205,3 +205,14 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .cta-meta { color: var(--muted); font-size: 15px; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
 .cta-meta .notarized { display: inline-flex; align-items: center; gap: 4px; cursor: help; }
 .cta-meta .notarized svg { color: var(--accent); }
+
+/* integrations */
+.integrations { padding: 48px 0 16px; text-align: center; }
+.integrations h2 { font-size: 26px; margin: 0 0 26px; letter-spacing: -0.01em; }
+.integration-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 900px; margin: 0 auto; }
+.integration { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 6px 12px; }
+.integration svg { width: 30px; height: 30px; fill: var(--muted); opacity: 0.8; }
+.integration h3 { margin: 4px 0 0; font-size: 16px; }
+.integration p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.45; max-width: 250px; }
+.integration-links { margin: 26px 0 0; color: var(--muted); font-size: 14.5px; }
+@media (max-width: 760px) { .integration-grid { grid-template-columns: 1fr; gap: 18px; } }
