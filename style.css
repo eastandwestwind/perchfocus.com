@@ -71,11 +71,6 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
 }
 
-.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; padding: 24px 0 56px; }
-@media (max-width: 760px) { .features { grid-template-columns: 1fr; } }
-.features article { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
-.features h2 { font-size: 17px; margin: 0 0 6px; }
-.features p { margin: 0; color: var(--muted); font-size: 15.5px; }
 
 .split { display: grid; grid-template-columns: 1fr 1.5fr; gap: 44px; align-items: center; padding: 56px 0; }
 .split.reverse { grid-template-columns: 1.5fr 1fr; }
@@ -127,7 +122,6 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .privacy-icon > path:first-child { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
 .privacy-icon .lock { fill: var(--accent); }
 .privacy-icon .shackle { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; }
-.feature-icon { width: 28px; height: 28px; margin-bottom: 12px; padding: 7px; box-sizing: content-box; border-radius: 10px; background: color-mix(in srgb, var(--accent) 12%, transparent); fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .updates-link { font-size: 14px; }
 .split.panel-shot { grid-template-columns: 1fr 1fr; }
 .split.panel-shot h2 { color: var(--text); }
@@ -227,3 +221,7 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .install .migrate .flock { width: 120px; }
 .install .migrate h2 { font-size: 17px; margin-bottom: 4px; }
 .install .migrate p { font-size: 15px; }
+.split.alerts-shot { grid-template-columns: 1fr 1fr; }
+.split.alerts-shot h2 { color: var(--text); }
+.split.alerts-shot picture img { max-width: 480px; margin: 0 auto; border-radius: 14px; }
+@media (max-width: 760px) { .split.alerts-shot { grid-template-columns: 1fr; } }

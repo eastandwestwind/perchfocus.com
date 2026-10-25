@@ -132,7 +132,7 @@
       </div>
       <div>
         <h2>One place per piece of work</h2>
-        <p>Chat with Claude, or switch to the real Claude Code terminal. Its status, next steps, PRs, links, and notes sit beside it.</p>
+        <p>Chat with Claude, or switch to the real Claude Code terminal. Its status, next steps, PRs, links, and notes sit beside it. Quit or update Perch and your sessions keep running.</p>
       </div>
     </section>
 
@@ -150,24 +150,19 @@
       </picture>
     </section>
 
-    <section class="features">
-      <article>
-        <svg class="feature-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0f6e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+    <section class="split reverse alerts-shot">
+      <picture>
+        <source srcset="assets/alerts-dark-v1.png" media="(prefers-color-scheme: dark)" />
+        <img src="assets/alerts-light-v1.png" alt="Your move on the dashboard: Search latency shows #814 CI failed and Checkout retries asks Should I roll out to 10% now?, both in orange, above a calm Q4 planning notes card" />
+      </picture>
+      <div>
         <h2>Only what needs you</h2>
-        <p>You hear from Perch only when Claude, a reviewer, or CI is waiting on you.</p>
-      </article>
-      <article>
-        <svg class="feature-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0f6e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
-        <h2>PRs in context</h2>
-        <p>Automatically detects linked PRs across repos and worktrees.</p>
-      </article>
-      <article>
-        <svg class="feature-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#0f6e6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m7 10 3 2-3 2"/><path d="M13 15h4"/></svg>
-        <h2>Sessions that persist</h2>
-        <p>Quit or update Perch. Your Claude sessions keep running.</p>
-      </article>
+        <p>
+          Perch stays quiet until Claude asks you something, a reviewer requests changes, or CI fails.
+          Then that piece of work turns orange and you get one notification. Perch finds your PRs across repos and worktrees on its own.
+        </p>
+      </div>
     </section>
-
     <section class="wide deep-focus">
       <h2>Deep focus</h2>
       <p>Mute every other context and stay with one. Leave when you choose to.</p>
