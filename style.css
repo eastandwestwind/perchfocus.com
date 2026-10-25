@@ -202,3 +202,6 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 @media (max-width: 860px) { .privacy-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .privacy-grid { grid-template-columns: 1fr; } }
 .own-tools .tool-logos { margin-top: 12px; }
+.cta-meta { color: var(--muted); font-size: 15px; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.cta-meta .notarized { display: inline-flex; align-items: center; gap: 4px; cursor: help; }
+.cta-meta .notarized svg { color: var(--accent); }
