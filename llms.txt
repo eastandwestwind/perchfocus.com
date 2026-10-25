@@ -29,9 +29,11 @@ Engineers who juggle parallel Claude Code work, and non-engineers (product manag
 
 ## Privacy
 
-- Contexts, notes, and status live in a local database on your Mac. No account and no Perch servers.
+- Contexts, notes, and status live in a local database on your Mac. No account, and nothing about your work leaves the Mac.
 - No analytics or usage tracking. Crash reports are off unless you turn them on, and never include prompts, terminal output, or code.
 - GitHub access goes through your own gh login. Claude Code talks to Anthropic exactly as it does without Perch.
+- Perch never reads, stores, or sends API keys or sign-in tokens. They stay in the macOS Keychain or the user's environment variables, wherever Claude Code, the GitHub CLI, and Atlassian's CLI keep them.
+- Every release is signed with an Apple Developer ID and notarized by Apple, which includes Apple's automated malware scan.
 
 ## Links
 

@@ -190,3 +190,15 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .changelog ul { padding-left: 20px; margin: 0; }
 .changelog li { margin: 8px 0; line-height: 1.55; }
 .changelog .fine { margin-top: 40px; font-size: 14px; }
+
+/* trust signals */
+.trust-badge { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; color: var(--muted); padding: 5px 12px; border: 1px solid var(--border); border-radius: 999px; background: var(--panel); }
+.trust-badge svg { color: var(--accent); flex: none; }
+.own-tools p + p { margin-top: 8px; }
+.tool-logos { display: flex; gap: 14px; margin-top: 14px; align-items: center; }
+.tool-logos svg { width: 20px; height: 20px; fill: var(--muted); opacity: 0.75; }
+.affiliation { text-align: center; font-size: 12.5px; color: var(--muted); margin: 26px 0 0; }
+.privacy-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) { .privacy-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .privacy-grid { grid-template-columns: 1fr; } }
+.own-tools .tool-logos { margin-top: 12px; }
