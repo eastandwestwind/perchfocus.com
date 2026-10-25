@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Send feedback · Perch</title>
+  <meta name="description" content="Report a bug, suggest an idea, or ask a question about Perch." />
+  <link rel="icon" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../style.css?v=14" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="" width="28" height="28" /> Perch <span class="beta">beta</span></a>
+  </header>
+
+  <main class="feedback">
+    <h1>Send feedback</h1>
+    <p class="muted">Found a bug, have an idea, or got stuck? Tell us here. Every message is read.</p>
+
+    <form id="feedback-form">
+      <fieldset class="kinds">
+        <legend>What is it about?</legend>
+        <label><input type="radio" name="kind" value="Bug" checked /> Something’s broken</label>
+        <label><input type="radio" name="kind" value="Idea" /> An idea</label>
+        <label><input type="radio" name="kind" value="Question" /> A question</label>
+        <label><input type="radio" name="kind" value="Other" /> Something else</label>
+      </fieldset>
+
+      <label class="field">
+        Your message
+        <textarea name="message" rows="7" required placeholder="What happened, or what would make Perch better for you?"></textarea>
+      </label>
+
+      <label class="field">
+        Your email <span class="muted">(optional, if you’d like a reply)</span>
+        <input type="email" name="email" placeholder="you@example.com" />
+      </label>
+
+      <div class="field shots">
+        Screenshots <span class="muted">(optional, up to 3: choose, drag in, or paste with ⌘V)</span>
+        <label class="drop" id="drop">
+          <input type="file" id="shot-input" accept="image/*" multiple />
+          <span>Add screenshots</span>
+        </label>
+        <ul class="thumbs" id="thumbs"></ul>
+      </div>
+
+      <label class="check" id="diagnostics-row" hidden>
+        <input type="checkbox" name="include_diagnostics" checked />
+        <span>Include <span id="diagnostics-text"></span></span>
+      </label>
+
+      <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+
+      <button class="button" type="submit">Send feedback</button>
+      <p class="form-error" id="form-error" hidden></p>
+    </form>
+
+    <div id="thanks" hidden>
+      <h2>Thank you!</h2>
+      <p class="muted">Your feedback is on its way. If you left your email, we’ll get back to you.</p>
+      <p><a href="../">Back to perchfocus.com</a></p>
+    </div>
+
+    <p class="fine-print muted">Messages and screenshots go straight to hello@perchfocus.com. Nothing else is collected.</p>
+  </main>
+
+  <footer>
+    <span>© 2026 Perch</span>
+    <a href="mailto:hello@perchfocus.com">hello@perchfocus.com</a>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('feedback-form');
+      var params = new URLSearchParams(location.search);
+      var parts = [];
+      if (params.get('v')) parts.push('Perch ' + params.get('v') + (params.get('build') ? ' (build ' + params.get('build') + ')' : ''));
+      if (params.get('os')) parts.push('macOS ' + params.get('os') + (params.get('arch') ? ', ' + params.get('arch') : ''));
+      var diagnostics = parts.join(' · ');
+      if (diagnostics) {
+        document.getElementById('diagnostics-text').textContent = diagnostics;
+        document.getElementById('diagnostics-row').hidden = false;
+      }
+      if (params.get('kind')) {
+        var preset = form.querySelector('input[name="kind"][value="' + params.get('kind') + '"]');
+        if (preset) preset.checked = true;
+      }
+
+      var ENDPOINT = 'https://perch-feedback.eastandwestwind.workers.dev';
+      var MAX_SHOTS = 3;
+      var MAX_BYTES = 10 * 1024 * 1024;
+      var shots = [];
+      var thumbs = document.getElementById('thumbs');
+      var error = document.getElementById('form-error');
+
+      function showError(text) {
+        error.textContent = text;
+        error.hidden = !text;
+      }
+
+      function render() {
+        thumbs.innerHTML = '';
+        shots.forEach(function (file, i) {
+          var li = document.createElement('li');
+          var img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          img.alt = file.name;
+          var remove = document.createElement('button');
+          remove.type = 'button';
+          remove.textContent = '×';
+          remove.title = 'Remove';
+          remove.onclick = function () { shots.splice(i, 1); render(); };
+          li.appendChild(img);
+          li.appendChild(remove);
+          thumbs.appendChild(li);
+        });
+        document.getElementById('drop').hidden = shots.length >= MAX_SHOTS;
+      }
+
+      function addFiles(list) {
+        showError('');
+        Array.prototype.forEach.call(list, function (file) {
+          if (!file.type || file.type.indexOf('image/') !== 0) return;
+          if (shots.length >= MAX_SHOTS) return showError('Up to ' + MAX_SHOTS + ' screenshots.');
+          var total = shots.reduce(function (n, f) { return n + f.size; }, 0) + file.size;
+          if (total > MAX_BYTES) return showError('Screenshots can add up to 10 MB.');
+          shots.push(file);
+        });
+        render();
+      }
+
+      document.getElementById('shot-input').addEventListener('change', function (e) { addFiles(e.target.files); e.target.value = ''; });
+      var drop = document.getElementById('drop');
+      ['dragenter', 'dragover'].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add('over'); }); });
+      ['dragleave', 'drop'].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove('over'); }); });
+      drop.addEventListener('drop', function (e) { e.preventDefault(); addFiles(e.dataTransfer.files); });
+      document.addEventListener('paste', function (e) {
+        var files = Array.prototype.filter.call(e.clipboardData ? e.clipboardData.files : [], function (f) { return f.type.indexOf('image/') === 0; });
+        if (files.length) { e.preventDefault(); addFiles(files); }
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        if (data.get('botcheck')) return;
+        showError('');
+        var out = new FormData();
+        out.append('kind', data.get('kind'));
+        out.append('message', data.get('message'));
+        out.append('email', data.get('email') || '');
+        out.append('botcheck', '');
+        if (diagnostics && data.get('include_diagnostics')) out.append('diagnostics', diagnostics);
+        shots.forEach(function (file, i) { out.append('screenshot', file, file.name || 'screenshot-' + (i + 1) + '.png'); });
+
+        var button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        fetch(ENDPOINT, { method: 'POST', body: out })
+          .then(function (res) { return res.json(); })
+          .then(function (json) {
+            if (!json.success) throw new Error(json.message || 'Something went wrong.');
+            form.hidden = true;
+            document.getElementById('thanks').hidden = false;
+          })
+          .catch(function (err) {
+            showError('That didn’t send (' + err.message + '). You can email hello@perchfocus.com instead.');
+            button.disabled = false;
+            button.textContent = 'Send feedback';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What’s new in Perch</title>
+  <meta name="description" content="Changes in each version of the Perch app." />
+  <link rel="icon" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../style.css?v=14" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../"><img src="../assets/icon-256.png" alt="" width="28" height="28" /> Perch <span class="beta">beta</span></a>
+  </header>
+
+  <main class="changelog">
+    <h1>What’s new in Perch</h1>
+    <p class="muted">Changes in each version of the app. Perch updates itself, so you’ll see these when you click <em>Install and relaunch</em>.</p>
+
+    <article id="v0.1.3">
+      <h2>0.1.3 <span class="date">25 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>Jira.</strong> Contexts with a ticket key like PROJ-123 show the ticket’s title, status, and latest comment. You get a notification when someone else comments, and the dashboard lists tickets assigned to you with a Start context button. Connect it from the setup checklist using Atlassian’s own sign-in. It’s optional, and Perch never changes anything in Jira.</li>
+        <li><strong>Send feedback from the app.</strong> The Feedback button, the sidebar, and the Help menu open a short form that can include a screenshot of the Perch window.</li>
+        <li><strong>A ⋯ menu for each context.</strong> Rename, open its folder in Finder, or delete it from the ⋯ button in the toolbar, or by right-clicking a context.</li>
+      </ul>
+      <h3>Improved</h3>
+      <ul>
+        <li>The side panel is calmer. Empty sections stay hidden, and Add step, link, and note appear when you click +. The ticket and PRs sit together under Tracking.</li>
+        <li>Chat shows a <em>Jump to latest</em> button when you scroll up, and <em>New reply</em> if Claude answered meanwhile.</li>
+        <li>Clicking anywhere outside an add field closes it, and anything you typed is kept for next time.</li>
+        <li>One setting controls how often PRs and tickets are checked. Refresh them anytime with ⌘⇧R.</li>
+        <li>The dashboard’s settings button moved to the far right.</li>
+      </ul>
+    </article>
+
+    <article id="v0.1.2">
+      <h2>0.1.2 <span class="date">24 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>One-click updates.</strong> When a new version is out, click <em>Install and relaunch</em>. Perch downloads it, checks it’s genuine, and restarts, and your Claude sessions keep running.</li>
+      </ul>
+    </article>
+
+    <article id="v0.1.1">
+      <h2>0.1.1 <span class="date">24 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>Chat view.</strong> See your conversation with Claude as chat, with formatted replies and a message box, as an alternative to the terminal. If Claude asks whether to trust a folder, you can answer right in the chat.</li>
+        <li><strong>A simpler New context.</strong> Name it, pick a folder, and start Claude in one step. Ticket keys in the name are detected for you.</li>
+        <li><strong>Guided setup.</strong> Perch can install Claude Code for you, and you choose folders in Finder instead of typing paths.</li>
+        <li><strong>Optional crash reports.</strong> Off unless you turn them on. Reports never include your prompts, terminal output, or code.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Claude can always update a context’s status, even in folders outside your project.</li>
+      </ul>
+    </article>
+
+    <article id="v0.1.0">
+      <h2>0.1.0 <span class="date">24 October 2026</span></h2>
+      <p>The first public beta: a dashboard grouped by whose move it is, notifications only when something needs you, next steps with owners, PR tracking, deep focus, sessions that keep running when you quit, and importing your existing Claude Code sessions.</p>
+    </article>
+
+    <p class="muted fine">Something not working? <a href="../feedback/">Send feedback</a>.</p>
+  </main>
+
+  <footer>
+    <span>© 2026 Perch</span>
+    <a href="mailto:hello@perchfocus.com">hello@perchfocus.com</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Perch
+
+> Perch is a free Mac app (beta) for people who run several Claude Code sessions at once. It keeps every session, PR, and link for a piece of work in one place, stays quiet while you focus, and tells you when something needs you.
+
+Tagline: Do one thing. Perch watches the rest.
+
+## What it does
+
+- Each piece of work is a "context" with its own Claude Code session, next steps, status, PRs, links, and notes.
+- The dashboard groups contexts by whose move it is: yours, waiting on a teammate or reviewer, Claude working, or idle.
+- Notifications arrive only when a session needs input or approval, a PR gets review comments, or CI fails. Perch stays silent about the context you are looking at.
+- Chat view shows the conversation with formatted replies and a message box. Terminal view is the real Claude Code CLI.
+- Every next step has an owner (you, Claude, or a teammate), and Claude keeps a one-line status as it works.
+- PRs are detected automatically across repos and worktrees, with review state, CI checks, and who you are waiting on (via the GitHub CLI).
+- Deep focus mutes every other context so you can stay with one.
+- Sessions keep running when you quit or update Perch.
+- Existing Claude Code sessions can be imported and resumed where they left off.
+- Updates install with one click and keep sessions running.
+
+## Who it is for
+
+Engineers who juggle parallel Claude Code work, and non-engineers (product managers, designers, analysts, writers) who use Claude Code without wanting to live in a terminal. Setup guides you through installing and signing in to Claude Code.
+
+## Requirements
+
+- macOS on Apple Silicon
+- Claude Code (Perch can install it for you)
+- GitHub CLI, optional, for PR states
+
+## Privacy
+
+- Contexts, notes, and status live in a local database on your Mac. No account and no Perch servers.
+- No analytics or usage tracking. Crash reports are off unless you turn them on, and never include prompts, terminal output, or code.
+- GitHub access goes through your own gh login. Claude Code talks to Anthropic exactly as it does without Perch.
+
+## Links
+
+- Website: https://perchfocus.com/
+- Download (latest, notarised DMG): https://github.com/eastandwestwind/perchfocus.com/releases/latest/download/Perch-arm64.dmg
+- Release notes: https://github.com/eastandwestwind/perchfocus.com/releases
+- Contact: hello@perchfocus.com
+
+## Pricing
+
+Free during the beta.
