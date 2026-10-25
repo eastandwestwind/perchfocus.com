@@ -214,6 +214,11 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .integration svg { width: 30px; height: 30px; fill: var(--muted); opacity: 0.8; }
 .integration h3 { margin: 4px 0 0; font-size: 16px; }
 .integration p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.45; max-width: 250px; }
-.integration-links { margin: 26px 0 0; color: var(--muted); font-size: 14.5px; }
 @media (max-width: 960px) { .integration-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 760px) { .integration-grid { grid-template-columns: 1fr; gap: 18px; } }
+
+.link-sources { max-width: 760px; margin: 40px auto 0; text-align: center; }
+.link-sources p { margin: 0 0 16px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.link-sources ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; }
+.link-sources li { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+.link-sources svg { width: 18px; height: 18px; fill: currentColor; opacity: 0.75; }
