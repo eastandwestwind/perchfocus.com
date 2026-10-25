@@ -223,3 +223,7 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .link-sources ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px; }
 .link-sources li { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
 .link-sources svg { width: 18px; height: 18px; fill: currentColor; opacity: 0.75; }
+.install .migrate { margin: 32px 0 0; padding: 20px 24px; gap: 20px; }
+.install .migrate .flock { width: 120px; }
+.install .migrate h2 { font-size: 17px; margin-bottom: 4px; }
+.install .migrate p { font-size: 15px; }
