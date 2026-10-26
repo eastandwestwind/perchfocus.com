@@ -14,6 +14,8 @@ Tagline: Do one thing. Perch watches the rest.
 - PRs are detected automatically across repos and worktrees, with review state, CI checks, and who you are waiting on (via the GitHub CLI).
 - Jira tickets show their status, assignee, and new comments, with a list of tickets assigned to you (via Atlassian's own CLI sign-in; read-only).
 - GitLab merge requests, approvals, and review threads appear alongside GitHub PRs (via the GitLab CLI, glab).
+- Azure Boards work items show their state and new comments, with a list of work assigned to you (via Microsoft's az CLI sign-in; read-only).
+- Chats from the Claude app (web or desktop) can be brought in from a Claude data export; Claude suggests which project each chat belongs to.
 - Links to Slack threads, Jira tickets, Confluence pages, Google Docs, Notion, Figma, Linear, and Loom are pinned to a context automatically when they come up in its Claude conversation, notes, or status, with readable titles.
 - Feedback, with an optional screenshot of the Perch window, can be sent from inside the app.
 - Deep focus mutes every other context so you can stay with one.
@@ -32,12 +34,13 @@ Engineers who juggle parallel Claude Code work, and non-engineers (product manag
 - GitHub CLI, optional, for PR states
 - GitLab CLI (glab), optional, for merge request states
 - Atlassian CLI, optional, for Jira
+- Azure CLI (az), optional, for Azure Boards
 
 ## Privacy
 
 - Contexts, notes, and status live in a local database on your Mac. No account, and nothing about your work leaves the Mac.
 - No analytics or usage tracking. Crash reports are off unless you turn them on, and never include prompts, terminal output, or code.
-- GitHub, GitLab, and Jira access goes through your own gh, glab, and Atlassian CLI logins. Claude Code talks to Anthropic exactly as it does without Perch.
+- GitHub, GitLab, Jira, and Azure Boards access goes through your own gh, glab, Atlassian, and az CLI logins. Claude Code talks to Anthropic exactly as it does without Perch.
 - Perch never reads, stores, or sends API keys or sign-in tokens. They stay in the macOS Keychain or the user's environment variables, wherever Claude Code, the GitHub CLI, and Atlassian's CLI keep them.
 - Every release is signed with an Apple Developer ID and notarized by Apple, which includes Apple's automated malware scan.
 
