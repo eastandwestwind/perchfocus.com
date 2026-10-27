@@ -17,6 +17,36 @@
     <h1>What’s new in Perch</h1>
     <p class="muted">Changes in each version of the app. Perch updates itself, so you’ll see these when you click <em>Install and relaunch</em>.</p>
 
+    <article id="v0.1.8">
+      <h2>0.1.8 <span class="date">27 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>Answer Claude from the notification.</strong> Permission banners show what Claude wants to run, with Allow and Deny. “Claude replied” banners take a reply right in the banner. Perch only presses a key if Claude is still showing that same prompt, and opens the context otherwise.</li>
+        <li><strong>Permissions in Chat.</strong> When Claude asks for permission, Chat shows the command with Allow and Deny, so you don’t have to switch to Terminal.</li>
+        <li><strong>A quiet dashboard.</strong> When nothing needs you, the Perch bird rests on its branch under a sky that follows the time of day, and falls asleep at night. A line underneath says how long Claude worked today and how often it checked in with you. Your contexts are one click away.</li>
+        <li><strong>While you were away.</strong> Come back after a long break and the dashboard opens with what moved: PRs merged, approved, or reviewed, and how long Claude worked on each context.</li>
+        <li><strong>Hand-off notes.</strong> Copy a short Markdown summary of any context, with where it stands, what’s done, what’s next, its PRs, and its links, ready for Slack, a ticket, or standup. Find it in the ⋯ menu or at the bottom of the side panel.</li>
+        <li><strong>Install with Homebrew.</strong> <code>brew install --cask perch</code> after tapping <code>eastandwestwind/tap</code>. The cask updates with every release.</li>
+      </ul>
+      <h3>Improved</h3>
+      <ul>
+        <li>One “In good hands” group on the dashboard for everything that isn’t your move, whether Claude, CI, or a teammate has it.</li>
+        <li>PR cards show who approved separately from comments still to address, and the toolbar says what to do in a few words, like “Address review on #6622”.</li>
+        <li>A review you’re doing counts as done once you approve or the PR merges, and Perch suggests archiving it.</li>
+        <li>A PR links to its context the moment Claude opens it, and PR links in a context’s title are tracked too.</li>
+        <li>While CI is still running, a PR waits on CI instead of asking you to fix an early failure.</li>
+        <li>The dark terminal is a softer grey.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Answering a permission prompt in Terminal clears “needs permission” right away, even while the approved command is still running.</li>
+        <li>No more false permission asks when auto mode approves a request before it shows.</li>
+        <li>Claude’s background shells and helper agents keep a context on “Claude is working” instead of flipping it to waiting for you.</li>
+        <li>When Claude ends a long reply with a question, the context shows that question instead of a PR alert.</li>
+        <li>Merged PRs stop showing “Awaiting review” after you switch branches, and approvals count in repos that don’t require reviews.</li>
+      </ul>
+    </article>
+
     <article id="v0.1.7">
       <h2>0.1.7 <span class="date">26 October 2026</span></h2>
       <h3>New</h3>
