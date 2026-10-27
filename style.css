@@ -228,3 +228,6 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 @media (max-width: 760px) { .split.alerts-shot { grid-template-columns: 1fr; } }
 .install .brew { margin: 18px 0 6px; font-size: 15px; }
 .install .brew-cmd { margin: 0 0 18px; padding: 12px 16px; border-radius: 10px; background: var(--panel); border: 1px solid var(--border); font-size: 13.5px; line-height: 1.6; overflow-x: auto; }
+
+.hero .featured { display: inline-block; margin: 20px 0 28px; }
+.hero .featured img { display: block; width: 200px; height: auto; }
