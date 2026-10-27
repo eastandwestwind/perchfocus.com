@@ -27,6 +27,10 @@ Tagline: Do one thing. Perch watches the rest.
 
 Engineers who juggle parallel Claude Code work, and non-engineers (product managers, designers, analysts, writers) who use Claude Code without wanting to live in a terminal. Setup guides you through installing and signing in to Claude Code.
 
+## Install
+
+- Download the DMG from https://perchfocus.com, or with Homebrew: `brew tap eastandwestwind/tap && brew trust eastandwestwind/tap && brew install --cask perch`
+
 ## Requirements
 
 - macOS on Apple Silicon
