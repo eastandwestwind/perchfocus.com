@@ -72,6 +72,11 @@
           </span>
         </span>
       </div>
+      <div class="brew-line">
+        <span class="label">Or with Homebrew</span>
+        <code id="brew-cmd">brew tap eastandwestwind/tap &amp;&amp; brew trust eastandwestwind/tap &amp;&amp; brew install --cask perch</code>
+        <button type="button" class="copy" data-copy="brew-cmd">Copy</button>
+      </div>
       <picture class="shot">
         <source srcset="assets/dashboard-dark-mobile-v3.png" media="(max-width: 760px) and (prefers-color-scheme: dark)" />
         <source srcset="assets/dashboard-light-mobile-v3.png" media="(max-width: 760px)" />
@@ -244,6 +249,17 @@ brew install --cask perch</code></pre>
     <span>© 2026 Perch</span>
     <span class="footer-links"><a href="mailto:hello@perchfocus.com?subject=Join%20the%20Perch%20beta%20updates&amp;body=Please%20add%20me%20to%20the%20Perch%20beta%20update%20emails.">Beta updates</a> · <a href="changelog/">What’s new</a> · <a href="feedback/">Feedback</a> · <a href="mailto:hello@perchfocus.com">hello@perchfocus.com</a></span>
   </footer>
+  <script>
+    document.querySelectorAll('button[data-copy]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var text = document.getElementById(button.dataset.copy).textContent;
+        navigator.clipboard.writeText(text).then(function () {
+          button.textContent = 'Copied';
+          setTimeout(function () { button.textContent = 'Copy'; }, 1600);
+        });
+      });
+    });
+  </script>
   <!-- Cloudflare Web Analytics. Skipped off the real site and in browsers marked internal via ?internal=1 (undo with ?internal=off). -->
   <script>
     (function () {
