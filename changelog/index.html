@@ -17,6 +17,34 @@
     <h1>What’s new in Perch</h1>
     <p class="muted">Changes in each version of the app. Perch updates itself, so you’ll see these when you click <em>Install and relaunch</em>.</p>
 
+    <article id="v0.1.9">
+      <h2>0.1.9 <span class="date">28 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>Wait-for steps.</strong> Add a step like “wait for &lt;PR link&gt; to be merged” or “merge dev in once #812 lands”, and Perch watches that PR for you. Until it lands, the context waits on it instead of nagging you about the CI it blocks. When it does, Perch tells Claude to carry on, or tells you if the wait was yours. Approved and CI green work too.</li>
+        <li><strong>Claude’s scheduled check-ins.</strong> When Claude sets itself a reminder to look again later, the context stays with Claude until then, and Perch keeps the reminder alive if the session restarts.</li>
+        <li><strong>Hide merged PRs.</strong> Merged and closed PRs fold behind “Show N merged” in the side panel.</li>
+        <li><strong>Everyone gets a color.</strong> Each teammate keeps their own color across cards, steps, and PRs, and CI, the merge queue, and PRs a context waits on show in blue.</li>
+      </ul>
+      <h3>Improved</h3>
+      <ul>
+        <li>A wider, calmer quiet scene with hills, drifting clouds, and a crescent moon at night, matching the greeting’s time of day. It moves for a little while, then holds still so it uses no energy.</li>
+        <li>Much lower energy use overall. Chat reads only what’s new in a conversation, and PR checks run several GitHub lookups at once, so new reviews and CI results show up sooner.</li>
+        <li>Review comments on draft PRs now count as your move.</li>
+        <li>Replies on Jira tickets a context only mentions reach you when someone answers your comment.</li>
+        <li>PRs in GitHub’s merge queue show “In merge queue”, and failures in checks that aren’t required no longer read as CI failed.</li>
+        <li>New installs keep notifications on screen until you deal with them. To change yours, open System Settings, then Notifications, then Perch.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>A reply you dismissed no longer comes back on its own, and a background shell keeps a context on “Claude is working” even after you’ve seen the reply.</li>
+        <li>Two contexts no longer pass the same PR back and forth when one of them only mentions it.</li>
+        <li>A step to merge a PR counts as done once the PR merges.</li>
+        <li>The side panel scrolls from anywhere, and long links in steps wrap.</li>
+        <li>Perch’s background helper no longer shows up in the Dock.</li>
+      </ul>
+    </article>
+
     <article id="v0.1.8">
       <h2>0.1.8 <span class="date">27 October 2026</span></h2>
       <h3>New</h3>
