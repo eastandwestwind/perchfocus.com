@@ -64,7 +64,7 @@
       <h1>Do one thing.<br />Perch watches the rest.</h1>
       <p class="lede">A calm Mac home for your Claude Code work, with every session, PR, and link in one place. Perch stays quiet while you're in flow, and tells you when something needs you.</p>
       <div class="cta" id="download">
-        <a class="button" href="https://github.com/eastandwestwind/perchfocus.com/releases/latest/download/Perch-arm64.dmg">Download for Mac</a>
+        <a class="button" id="download-link" href="https://perch-updates.eastandwestwind.workers.dev/download?src=site">Download for Mac</a>
         <span class="cta-meta">
           Free beta · Apple Silicon ·
           <span class="notarized" title="Every release is signed with an Apple Developer ID and notarized by Apple, which includes Apple’s automated malware scan.">
@@ -251,6 +251,21 @@ brew install --cask perch</code></pre>
     <span>© 2026 Perch</span>
     <span class="footer-links"><a href="mailto:hello@perchfocus.com?subject=Join%20the%20Perch%20beta%20updates&amp;body=Please%20add%20me%20to%20the%20Perch%20beta%20update%20emails.">Beta updates</a> · <a href="changelog/">What’s new</a> · <a href="feedback/">Feedback</a> · <a href="mailto:hello@perchfocus.com">hello@perchfocus.com</a></span>
   </footer>
+  <script>
+    (function () {
+      var link = document.getElementById('download-link');
+      if (!link) return;
+      var url = new URL(link.href);
+      var source = new URLSearchParams(location.search).get('utm_source');
+      if (source) url.searchParams.set('utm_source', source);
+      var internal = location.hostname !== 'perchfocus.com';
+      var flag = new URLSearchParams(location.search).get('internal');
+      if (flag !== null && flag !== 'off') internal = true;
+      try { internal = internal || (flag !== 'off' && !!localStorage.getItem('perch-internal')); } catch (e) {}
+      if (internal) url.searchParams.set('internal', '1');
+      link.href = url.toString();
+    })();
+  </script>
   <script>
     document.querySelectorAll('button[data-copy]').forEach(function (button) {
       button.addEventListener('click', function () {
