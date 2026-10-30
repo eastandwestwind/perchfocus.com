@@ -65,6 +65,10 @@
       <p class="lede">A calm Mac home for your Claude Code work, with every session, PR, and link in one place. Perch stays quiet while you're in flow, and tells you when something needs you.</p>
       <div class="cta" id="download">
         <a class="button" id="download-link" href="https://perch-updates.eastandwestwind.workers.dev/download?src=site">Download for Mac</a>
+        <p class="not-mac" id="not-mac" hidden>
+          <span class="why">Perch runs on Apple Silicon Macs.</span>
+          <a href="#" id="email-link">Email me the link</a>
+        </p>
         <span class="cta-meta">
           Free beta · Apple Silicon ·
           <span class="notarized" title="Every release is signed with an Apple Developer ID and notarized by Apple, which includes Apple’s automated malware scan.">
@@ -264,6 +268,39 @@ brew install --cask perch</code></pre>
       try { internal = internal || (flag !== 'off' && !!localStorage.getItem('perch-internal')); } catch (e) {}
       if (internal) url.searchParams.set('internal', '1');
       link.href = url.toString();
+    })();
+  </script>
+  <script>
+    (function () {
+      var ua = navigator.userAgent;
+      var ipad = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+      var phone = /iPhone|iPod|iPad|Android/.test(ua) || ipad;
+      var otherDesktop = !phone && /Windows|Linux|CrOS/.test(ua);
+      if (!phone && !otherDesktop) return;
+      var page = 'https://perchfocus.com/?utm_source=handoff';
+      var internal = location.hostname !== 'perchfocus.com';
+      try { internal = internal || !!localStorage.getItem('perch-internal'); } catch (e) {}
+      var count = function (e) {
+        if (internal) return;
+        try { navigator.sendBeacon('https://perch-updates.eastandwestwind.workers.dev/event?e=' + e); } catch (err) {}
+      };
+      var mail = 'mailto:?subject=' + encodeURIComponent('Perch for my Mac') + '&body=' + encodeURIComponent('Download Perch on your Mac: ' + page);
+      var note = document.getElementById('not-mac');
+      var email = document.getElementById('email-link');
+      note.hidden = false;
+      email.href = mail;
+      email.addEventListener('click', function () { count('email'); });
+      if (phone) {
+        var button = document.getElementById('download-link');
+        button.textContent = 'Send to my Mac';
+        note.querySelector('.why').textContent = 'Perch runs on Mac. Send yourself the link with AirDrop, Messages, or Notes.';
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          count('share');
+          if (navigator.share) navigator.share({ title: 'Perch for Mac', url: page }).catch(function () {});
+          else location.href = mail;
+        });
+      }
     })();
   </script>
   <script>

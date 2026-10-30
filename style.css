@@ -239,3 +239,5 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .brew-line code::before { content: '$ '; color: #7fd1b9; }
 .brew-line .copy { font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 7px; border: 1px solid #3d4550; background: #323841; color: #e6ecef; cursor: pointer; }
 .brew-line .copy:hover { background: #3b424c; }
+.not-mac { margin: 2px 0 0; font-size: 14px; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.not-mac[hidden] { display: none; }
