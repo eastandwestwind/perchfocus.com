@@ -17,6 +17,31 @@
     <h1>What’s new in Perch</h1>
     <p class="muted">Changes in each version of the app. Perch updates itself, so you’ll see these when you click <em>Install and relaunch</em>.</p>
 
+    <article id="v0.1.10">
+      <h2>0.1.10 <span class="date">30 October 2026</span></h2>
+      <h3>New</h3>
+      <ul>
+        <li><strong>A calmer side panel.</strong> What’s next, the first few steps, and the status stay on top. PRs, links, and your workspace sit in tabs below, with PRs open by default and a dot when one needs you.</li>
+        <li><strong>Links that say what they are.</strong> Tickets and PRs show their title and status, your context’s own work comes first, and finished ones fold away.</li>
+        <li><strong>PR stacks as a tree.</strong> Each PR sits under the one it builds on, starting from main, with the next one to merge marked.</li>
+        <li><strong>Clickable references.</strong> PR numbers, tickets, and links in the status and steps open in one click, and merged PRs are struck through.</li>
+        <li><strong>Rest idle Claude sessions.</strong> Perch notices sessions that have sat idle for hours and lets you rest them to free memory. Contexts in Later rest on their own. Opening a rested context resumes the same conversation.</li>
+        <li><strong>A guided first run.</strong> Connect Claude, bring in your work, then connect GitHub, GitLab, Jira, or Azure Boards if you like.</li>
+      </ul>
+      <h3>Improved</h3>
+      <ul>
+        <li>Next steps keep up. Steps whose PRs merged or tickets closed show as done, and Claude hears what changed since its last update.</li>
+        <li>Perch uses a small fraction of your GitHub API allowance, so other tools on your login don’t run out. Checks also slow down while nothing changes or you’re away, and catch up the moment Claude pushes or you come back.</li>
+        <li>Shorter alerts. Dismiss from the toolbar or the side panel.</li>
+      </ul>
+      <h3>Fixed</h3>
+      <ul>
+        <li>Perch reads whose move it is more reliably: approval requests, questions that end a long reply, permission asks from Claude’s workflows, steps saved for later, and waits on a PR that actually needs you.</li>
+        <li>A CI failure left over from a cancelled run no longer reads as failing, and fewer review threads to answer no longer counts as new.</li>
+        <li>The terminal scrolls again in long sessions, and undo notes clear on time.</li>
+      </ul>
+    </article>
+
     <article id="v0.1.9">
       <h2>0.1.9 <span class="date">28 October 2026</span></h2>
       <h3>New</h3>
