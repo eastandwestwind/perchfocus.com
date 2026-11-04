@@ -241,3 +241,4 @@ footer { border-top: 1px solid var(--border); padding: 22px 28px; display: flex;
 .brew-line .copy:hover { background: #3b424c; }
 .not-mac { margin: 2px 0 0; font-size: 14px; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .not-mac[hidden] { display: none; }
+.made-with .heart { color: #e4572e; }
