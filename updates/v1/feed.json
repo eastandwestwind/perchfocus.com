@@ -3,17 +3,17 @@
   "channels": {
     "beta": {
       "latest": {
-        "version": "0.1.11",
-        "build": "20261104T112715",
-        "releasedAt": "2026-11-04T11:34:57.115Z",
-        "notesUrl": "https://perchfocus.com/changelog/#v0.1.11",
+        "version": "0.1.12",
+        "build": "20261109T145047",
+        "releasedAt": "2026-11-09T14:58:15.156Z",
+        "notesUrl": "https://perchfocus.com/changelog/#v0.1.12",
         "minimumMacOS": "13.0",
         "critical": false,
         "assets": {
           "darwin-arm64": {
-            "url": "https://github.com/eastandwestwind/perchfocus.com/releases/download/v0.1.11/Perch-arm64.dmg",
-            "sha256": "74acfa8b987df5783e800937e3d7e915d0b1086d2f7388b83229bbb66546db43",
-            "size": 143857665
+            "url": "https://github.com/eastandwestwind/perchfocus.com/releases/download/v0.1.12/Perch-arm64.dmg",
+            "sha256": "ae2f1251c0e6213d94af1c44274829ce3f94ac0e86d4599c6e8aa57a4aecc0cb",
+            "size": 143856612
           }
         }
       }
